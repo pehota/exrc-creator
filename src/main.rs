@@ -33,9 +33,9 @@ fn get_args() -> Args {
     let args: Vec<String> = env::args().collect();
     let mut arg_name: String = "".to_string();
 
-    for arg in args.iter().skip(1) {
-        if arg[..1] == "-".to_string() && arg_name.is_empty() {
-            arg_name = arg[1..arg.len()].to_string();
+    for arg in args.iter() {
+        if arg[..2] == "--".to_string() && arg_name.is_empty() {
+            arg_name = arg[2..arg.len()].to_string();
         } else if !arg_name.is_empty() {
             if arg_name == "dst".to_string() {
                 arguments.dst_dir = arg.to_string();
