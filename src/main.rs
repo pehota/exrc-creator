@@ -16,12 +16,6 @@ impl Args {
             languages: vec![],
         }
     }
-
-    // fn is_empty(&self) -> bool {
-    // let empty = Args::empty();
-    // self.dst_dir == empty.dst_dir
-    // && self.languages == empty.languages
-    // }
 }
 
 fn main() {
@@ -32,10 +26,6 @@ fn main() {
         println!("Please provide languages to use in the .exrc");
         return;
     }
-}
-
-fn resolve_arg_name(arg: String) -> Option<String> {
-    None
 }
 
 fn get_args() -> Args {
