@@ -5,7 +5,6 @@ use std::vec::Vec;
 
 #[derive(Debug, PartialEq, PartialOrd)]
 struct Args {
-    script: String,
     dst_dir: String,
     languages: Vec<String>,
 }
@@ -13,7 +12,6 @@ struct Args {
 impl Args {
     fn empty() -> Args {
         Args {
-            script: "".to_string(),
             dst_dir: String::from(""),
             languages: vec![],
         }
@@ -21,8 +19,7 @@ impl Args {
 
     // fn is_empty(&self) -> bool {
     // let empty = Args::empty();
-    // self.script == empty.script
-    // && self.dst_dir == empty.dst_dir
+    // self.dst_dir == empty.dst_dir
     // && self.languages == empty.languages
     // }
 }
