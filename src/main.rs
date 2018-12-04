@@ -1,16 +1,18 @@
-mod tests;
-mod utils;
-// use std::fs::File;
+extern crate exrc_tool;
+
+use exrc_tool::*;
+use std::process;
 
 fn main() {
     use std::env;
-    use utils;
 
-    let args = utils::parse_args(env::args().collect());
-    println!("Args: {:#?}", args);
+    let config = Config::new(env::args().collect()).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {}", err);
+        process::exit(1);
+    });
 
-    if args.languages.is_empty() {
-        println!("Please provide languages to use in the .exrc");
-        return;
+    if let Err(error) = run(config) {
+        println!("An error occurred while running the app: {}", error);
+        process::exit(1);
     }
 }
