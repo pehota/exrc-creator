@@ -1,6 +1,6 @@
 [package]
 name = "exrc-tool"
 version = "0.1.0"
-authors = ["Dimitar Apostolov <>"]
+authors = ["Dimitar Apostolov <d.apostolov@gmail.com>"]
 
 [dependencies]
